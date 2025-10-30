@@ -21,26 +21,6 @@ orderButton.addEventListener('click', () => {
 });
 cartItemsContainer.parentElement.appendChild(orderButton); // append below cart items
 
-// Add to Cart button click
-addToCartButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const card = e.target.closest('.card');
-        const name = card.querySelector('.card-title').innerText;
-        const price = parseInt(card.querySelector('.price').innerText);
-        const imgSrc = card.querySelector('img').src;
-
-        const existingItem = cart.find(item => item.name === name);
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({ name, price, imgSrc, quantity: 1 });
-        }
-
-        updateCartUI();
-    });
-});
-
 // Update Cart UI
 function updateCartUI() {
     cartItemsContainer.innerHTML = '';
