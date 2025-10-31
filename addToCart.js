@@ -4,6 +4,7 @@ const cartItemsContainer = document.getElementById('cart-items');
 const totalItems = document.getElementById('itemsForCart');
 const totalAmount = document.getElementById('total-amount');
 const cartIcon = document.getElementById('cart-count'); // cart icon count
+let myVariable
 
 let cart = []; // only declare once
 
